@@ -13,6 +13,7 @@ import httplib
 import mimetools
 import json
 import ConfigParser
+
 def post_multipart(host, selector, fields, files):
     content_type, body = encode_multipart_formdata(fields, files)
     h = httplib.HTTP(host)
@@ -56,12 +57,25 @@ def get_tracks_artists(artists):
 def add_track(artist, track) :
     with open("/var/lib/mopidy/playlists/like.m3u", "a") as myfile:
         myfile.write("#EXTINF:-1, {} - {} \nhttp://prout\n".format(artist, track))
-'''
-Replace "###...###" below with your project's host, access_key and access_secret.
-'''
-host = "eu-west-1.api.acrcloud.com"
-access_key = "385440f6e5ef23a2a0ee285485ec4595"
-access_secret = "eo0kSdsgsTtFVUdCYXCCbkKYMZQZPnfqKyhrbbzq"
+
+# Read ACR clouds access parameters
+config_file = sys.argv[2]
+config = ConfigParser.ConfigParser()
+config_file = config.read(config_file)
+if len(config_file) == 0 :
+    raise Exception('no config file - cannot get ACRClouds params'.format(config_file))
+
+host = None
+access_key = None
+access_secret = None
+
+try:
+    host = config.get('acr_cloud', 'host')
+    access_key = config.get('acr_cloud', 'access_key')
+    access_secret = config.get('acr_cloud', 'access_secret')
+except ConfigParser.NoOptionError as e:
+    print('cannot get acr cloud config - {}'.format(e))
+    raise e
 
 # suported file formats: mp3,wav,wma,amr,ogg, ape,acc,spx,m4a,mp4,FLAC, etc
 # File size: < 1M , You'de better cut large file to small file, within 15 seconds data size is better
