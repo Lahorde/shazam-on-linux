@@ -11,6 +11,7 @@ Shazam runs on mobile device. No Shazam application runs on non Android linux ba
 * add (url, key access, key secret) to `./shazam_on_linux.conf`
 
 ## configure alsa / pulseaudio
+Sound detection is done on current played track. In order to record (internal software record) it when it is played, without using any microphone, alsa loop module or pulse monitor must be previously configured. 
 ### Alsa
 [Alsa loop module](https://www.alsa-project.org/main/index.php/Matrix:Module-aloop) is used to record played sound on a linux machine.
 Install and configure it.
