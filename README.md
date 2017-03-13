@@ -55,4 +55,5 @@ Played music is addded to mpd playlist.
 
 # References
 [alsa dmix config failing](http://raspberrypi.stackexchange.com/questions/57787/using-the-alsa-dmix-plugin-on-raspbian-jessie/61974#61974)
+
 [alsa dmix conifg failing -> solution](http://stackoverflow.com/questions/42202282/alsa-loop-with-dmix)
