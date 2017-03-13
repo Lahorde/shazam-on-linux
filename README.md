@@ -38,9 +38,21 @@ Check alsa is correctly configured playing several sounds at same time:
     # check played sound is a mix of both sounds
     play /tmp/test.wav
 
+# Run sound detection
+
+    ./shazam.sh ./shazam_on_linux.conf
+    # script takes more than 5s to detect sound
+    # it returns info about currently played track
+    Track : Do That Dance
+    Artist Shit Robot feat. Nancy Whang
+    Album : Do That Dance
 
 # Use cases
 ## Add played music to your playlist 
 Your music server runs on a linux machine (e.g. raspberry). Shazam is triggered on a user specific action. 
 TODO add ring bell description
 Played music is addded to mpd playlist.
+
+# References
+[alsa dmix config failing](http://raspberrypi.stackexchange.com/questions/57787/using-the-alsa-dmix-plugin-on-raspbian-jessie/61974#61974)
+[alsa dmix conifg failing -> solution](http://stackoverflow.com/questions/42202282/alsa-loop-with-dmix)

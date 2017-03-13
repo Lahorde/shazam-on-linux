@@ -18,5 +18,5 @@ timeout 5 arecord -c 2 -f S32_LE -r 48000 -D loopout ${RECORD_FOLDER}/${RECORD_F
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # identidy recorded file
-python2 ${DIR}/identify_sound.py ${RECORD_FOLDER}/${RECORD_FILE} $1
+python2 ${DIR}/identify_sound.py -s ${RECORD_FOLDER}/${RECORD_FILE} -c $1
 
