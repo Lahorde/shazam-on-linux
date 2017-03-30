@@ -3,6 +3,7 @@ Shazam runs on mobile device. No Shazam application runs on non Android linux ba
  * you can customize triggers that launch sound detection, e.g. : use [slack messenging](www.slack.com) bots to enable detection when you write a slack specific maessage
  * you can customize actions on music recognition: add recognized music to your playlist, share on facebook...
  * you do not have, or you cannot use your smartphone to shazam a sound
+ * you are using earphone to listen your music on a device not supported by Shazam application (running Shazam on a smartphone with earphone is possible)
  * you can add this service to your preferred music server (mpd, logitechmediaserver)...
 
 # Prerequisities
